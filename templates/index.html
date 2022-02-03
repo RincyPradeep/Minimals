@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{% static 'images/favicon/favicon-32x32.png' %}"
+        />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <title>Minimals</title>
+</head>
+<body>
+    <section class="home">
+        <header class="wrapper">
+            <h1 class="left">
+                <a href="#"><img src="{% static 'images/brand/logo_single.svg' %}" alt="Logo" /></a>
+                <p class="version">v2.6.0</p>
+            </h1>
+            <nav class="right">
+                <ul>       
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Components</a></li>
+                    <li><a href="#">Pages<i class="fas fa-angle-down"></i></a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#" class="button">Purchase Now</a></li>           
+                </ul>
+            </nav>
+        </header>
+
+        <section id="spotlight" class="wrapper">
+            <section class="content">
+                <h1>Start a <br/> new project <br/>with <span>Minimal</span></h1>
+                <p>The starting point for your next project based on easy-to-customize Material-UI &copy; helps you build apps faster and better.</p>
+                
+                <a href="#"><img src="" alt="">Preview in --- Cloud</a>
+                
+                <a href="#" class='button'><i class="fas fa-bolt"></i>Live Preview</a>
+                <ul>
+                    {% for option in options %}
+                    <li>
+                        <img src="{{option.logo.url}}" alt="">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>   <!-- #spotlight > section.content -->
+            <section class="image">
+                <img src="{% static 'images/home/hero.png' %}" alt="hero">
+            </section> <!-- #spotlight > section.image -->
+        </section> <!-- #spotlight -->
+    </section> <!-- section.home -->
+
+    <section id="helps" class="wrapper">
+        <div class="top">
+            <span>MINIMAL</span>
+            <h2>What minimal helps you?</h2>
+        </div>
+        <div class="bottom">
+            <ul>
+                <li>
+                    <img src="{% static 'images/icons/ic_design.svg' %}" alt="">
+                    <h3>UI & UX Design</h3>
+                    <p>The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.</p>
+                </li>
+                <li>
+                    <img src="{% static 'images/icons/ic_code.svg' %}" alt="">
+                    <h3>Development</h3>
+                    <p>Easy to customize and extend each component, saving you time and money.</p>
+                </li>
+                <li>
+                    <img src="{% static 'images/favicon/favicon-32x32.png' %}" alt="">
+                    <h3>Branding</h3>
+                    <p>Consistent design in colors, fonts...makes brand recognition easy.</p>
+                </li>
+            </ul>
+        </div>
+    </section> <!-- #helps -->
+
+    <section id="features">       
+            <ul>
+                <li>
+                    <section class="wrapper">
+                    <div class="left">
+                        <span>INTERFACE STARTER KIT</span>
+                        <h2>Huge pack <br/>of elements</h2>
+                        <p>We collected most popular elements. Menu, sliders, buttons, inputs etc.are all here. Just dive in!</p>
+                        <a href="" class="button">View All Components</a>
+                    </div> <!-- #features > section.wrapper > div.left -->
+                    <div class="right">
+                        <div>
+                            <span class="outer">
+                                <span class="inner">
+                                    <img src="{% static 'images/home/screen_light_1.png' %}" alt="">
+                                </span>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="outer">
+                                <span class="inner">
+                                    <img src="{% static 'images/home/screen_light_2.png' %}" alt="">
+                                </span>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="outer">
+                                <span class="inner">
+                                    <img src="{% static 'images/home/screen_light_3.png' %}" alt="">
+                                </span>
+                            </span>
+                        </div>
+                    </div> <!-- #features > section.wrapper > div.right -->
+                </section> <!-- #features > section.wrapper -->
+                </li>
+                <li>
+                    
+                </li>
+            </ul>        
+    </section> <!-- #features -->
+</body>
+</html>
