@@ -40,14 +40,16 @@
             <section class="content">
                 <h1>Start a <br/> new project <br/>with <span>Minimal</span></h1>
                 <p>The starting point for your next project based on easy-to-customize Material-UI &copy; helps you build apps faster and better.</p>
-                
-                <a href="#"><img src="" alt="">Preview in --- Cloud</a>
-                
+                {% for option in options %}
+                {% if option.is_active %}
+                <a href="#"><img src="{{option.logo_small.url }}" alt="">Preview in {{option.name}} Cloud</a>
+                {% endif %}
+                {% endfor %}
                 <a href="#" class='button'><i class="fas fa-bolt"></i>Live Preview</a>
                 <ul>
                     {% for option in options %}
                     <li>
-                        <img src="{{option.logo.url}}" alt="">
+                        <img src="{{option.logo.url}}" alt="logo">
                     </li>
                     {% endfor %}
                 </ul>
@@ -65,21 +67,13 @@
         </div>
         <div class="bottom">
             <ul>
+                {% for help in helps %}
                 <li>
-                    <img src="{% static 'images/icons/ic_design.svg' %}" alt="">
-                    <h3>UI & UX Design</h3>
-                    <p>The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.</p>
+                    <img src="{{help.image.url}}" alt="{{help.title}}">
+                    <h3>{{help.title}}</h3>
+                    <p>{{help.description}}</p>
                 </li>
-                <li>
-                    <img src="{% static 'images/icons/ic_code.svg' %}" alt="">
-                    <h3>Development</h3>
-                    <p>Easy to customize and extend each component, saving you time and money.</p>
-                </li>
-                <li>
-                    <img src="{% static 'images/favicon/favicon-32x32.png' %}" alt="">
-                    <h3>Branding</h3>
-                    <p>Consistent design in colors, fonts...makes brand recognition easy.</p>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </section> <!-- #helps -->
@@ -188,57 +182,41 @@
             </div> <!-- #price >div.top -->
             <div class="bottom">
                 <ul>
+                    {% for price in prices %}
                     <li>
-                        <span>LICENSE</span>
-                        <h3>Standard</h3>
-                        <img src="" alt="">
+                        <span>{{price.label}}</span>
+                        <h3>{{price.title}}</h3>
+                        {% if price.title == 'Standard' %}
+                            <img src="{% static 'images/home/ic_js.svg' %}" alt="">
+                        {% endif %}
+                        {% if price.title == 'Standard Plus' or price.title == 'Extended' %}
+                            <img src="{% static 'images/home/ic_sketch.svg' %}" alt="">
+                            <img src="{% static 'images/home/ic_figma.svg' %}" alt="">
+                            <img src="{% static 'images/home/ic_js.svg' %}" alt="">
+                            <img src="{% static 'images/home/ic_ts.svg' %}" alt="">
+                        {% endif %}
+                        
                         <div>                           
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
+                            <p class="{% if price.one_end_products %} active {% endif %}">
+                                <i class="fa fa-check"></i>One end products</p>
+                            <p class="{% if price.twelve_months_updates %} active {% endif %}">
+                                <i class="fa fa-check"></i>12 months updates</p>
+                            <p class="{% if price.six_months_of_support %} active {% endif %}">
+                                <i class="fa fa-check"></i>6 months of support</p>
                             <hr/>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
+                            <p class="{% if price.javascript_version %} active {% endif %}">
+                                <i class="fa fa-check"></i>JavaScript version</p>
+                            <p class="{% if price.typescript_version %} active {% endif %}">
+                                <i class="fa fa-check"></i>TypeScript version</p>
+                            <p class="{% if price.design_resources %} active {% endif %}">
+                                <i class="fa fa-check"></i>Design Resources</p>
+                            <p class="{% if price.commercial_applications %} active {% endif %}">
+                                <i class="fa fa-check"></i>Commercial applications</p>
                         </div>
                         <a href="#" class="learn-more">Learn more<i class="fa fa-angle-right"></i></a>
                         <a href="#" class="button">Choose Plan</a>
                     </li>
-                    <li>
-                        <span>LICENSE</span>
-                        <h3>Standard</h3>
-                        <img src="" alt="">
-                        <div>                           
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <hr/>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                        </div>
-                        <a href="#" class="learn-more">Learn more<i class="fa fa-angle-right"></i></a>
-                        <a href="#" class="button">Choose Plan</a>
-                    </li>
-                    <li>
-                        <span>LICENSE</span>
-                        <h3>Standard</h3>
-                        <img src="" alt="">
-                        <div>                           
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <hr/>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                            <p><i class="fa fa-check"></i>One end products</p>
-                        </div>
-                        <a href="#" class="learn-more">Learn more<i class="fa fa-angle-right"></i></a>
-                        <a href="#" class="button">Choose Plan</a>
-                    </li>                   
+                    {% endfor %}
                 </ul>
             </div> <!-- #price > div.bottom -->
         </section> <!-- #price > section.wrapper-->

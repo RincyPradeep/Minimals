@@ -166,6 +166,9 @@ header nav ul li a i{
 #spotlight section.content a{
     color:#fff;
 }
+#spotlight section.content a img{
+    margin-right: 20px;
+}
 #spotlight section.content a.button{
     display: block;
     width: 170px;
@@ -587,18 +590,25 @@ header nav ul li a i{
 #price div.bottom ul li h3{
     font-weight: 600;
     font-size: 22px;
-    margin: 10px 0 20px;
+    margin: 10px 0 30px;
 }
 #price div.bottom ul li div{
-    
+    margin-top:30px;
 }
 #price div.bottom ul li div p{
     line-height: 3;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
+    color:rgb(129, 129, 129);
+}
+#price div.bottom ul li div p.active{
+    color:#000;
 }
 #price div.bottom ul li div p i{
     margin-right: 10px;
+    color:rgb(129, 129, 129);
+}
+#price div.bottom ul li div p.active i{
     color:rgb(0 171 85);
 }
 #price div.bottom ul li div hr{
